@@ -9,7 +9,7 @@ var path = require('path');
 module.exports = function (options) {
   var files = {};
   var filesSrc = [];
-  var projectId;
+
   options = _.defaults(options || {}, {
     keys: {
       accessKey: '',
