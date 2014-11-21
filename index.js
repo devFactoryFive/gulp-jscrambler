@@ -11,10 +11,7 @@ module.exports = function (options) {
   var filesSrc = [];
 
   options = _.defaults(options || {}, {
-    keys: {
-      accessKey: '',
-      secretKey: ''
-    },
+    keys: {},
     deleteProject: false,
     params: {
       rename_local: '%DEFAULT%',
