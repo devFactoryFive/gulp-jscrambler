@@ -24,6 +24,10 @@ gulp.task('default', function () {
         accessKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
         secretKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
       },
+      params: {
+        domain_lock: 'www.mysite.com',
+        self_defending: '%DEFAULT%'
+      },
       deleteProject: true
     }))
     .pipe(gulp.dest('dist/'));
