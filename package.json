@@ -1,7 +1,7 @@
 {
   "name": "gulp-jscrambler",
   "description": "Obfuscate your source files using the JScrambler API.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/auditmark/gulp-jscrambler",
   "author": "José Magalhães <jose.magalhaes@auditmark.com> (https://github.com/magalhas)",
   "repository": {
