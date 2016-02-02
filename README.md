@@ -24,11 +24,10 @@ gulp.task('default', function () {
         accessKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
         secretKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
       },
+      applicationId: 'XXXXXXXXXXXX',
       params: {
-        domain_lock: 'www.mysite.com',
-        self_defending: '%DEFAULT%'
-      },
-      deleteProject: true
+        functionOutlining: true,
+      }
     }))
     .pipe(gulp.dest('dist/'));
 });
@@ -55,16 +54,6 @@ A string value that is used to provide the JScrambler's host.
 Type: `Number`
 
 A number value that is used to provide the JScrambler's port.
-
-### apiVersion
-Type: `String`
-
-A string value that is used to select the version of JScrambler.
-
-### deleteProject
-Type: `Boolean`
-
-If this is set to `true` then the project will be deleted from JScrambler after it has been downloaded.
 
 ### params
 Type: `Object`
