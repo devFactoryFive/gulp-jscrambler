@@ -12,9 +12,15 @@ describe('JScrambler Gulp Task', function () {
       .src('./index.js')
       .pipe(jScrambler({
         keys: keys,
-        deleteProject: true
+        applicationId: '574eb56a4e07cb8d004e5aa7',
+        params: {
+          stringSplitting: {}
+        }
       }))
       .pipe(gulp.dest('./results/single'))
+      .on('error', function (error) {
+        done(error);
+      })
       .on('end', function () {
         fs.exists('./results/single/index.js', function (exists) {
           if (exists) {

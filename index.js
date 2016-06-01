@@ -1,16 +1,16 @@
 'use strict';
-var _ = require('lodash');
+var defaults = require('lodash.defaults');
 var es = require('event-stream');
 var gutil = require('gulp-util');
 var File = gutil.File;
-var jScrambler = require('jscrambler');
+var jScrambler = require('jscrambler').default;
 var path = require('path');
 
 module.exports = function (options) {
   var files = {};
   var filesSrc = [];
 
-  options = _.defaults(options || {}, {
+  options = defaults(options || {}, {
     keys: {}
   });
   var aggregate = function (file) {
@@ -21,25 +21,30 @@ module.exports = function (options) {
   };
   var scramble = function () {
     var self = this;
-    jScrambler.protectAndDownload({
-      filesSrc: filesSrc,
-      keys: {
-        accessKey: options.keys.accessKey,
-        secretKey: options.keys.secretKey
-      },
-      applicationId: options.applicationId,
-      host: options.host,
-      port: options.port,
-      params: options.params
-    }, function (buffer, file) {
-      var cwd = options.params && options.params.cwd || process.cwd();
-      var relativePath = path.relative(cwd, file);
-      self.emit('data', new File({
-        path: relativePath,
-        contents: buffer
-      }));
-    })
-      .done(function () {
+    jScrambler
+      .protectAndDownload({
+        filesSrc: filesSrc,
+        keys: {
+          accessKey: options.keys.accessKey,
+          secretKey: options.keys.secretKey
+        },
+        applicationId: options.applicationId,
+        host: options.host,
+        port: options.port,
+        params: options.params
+      }, function (buffer, file) {
+        var cwd = options.params && options.params.cwd || process.cwd();
+        var relativePath = path.relative(cwd, file);
+        self.emit('data', new File({
+          path: relativePath,
+          contents: buffer
+        }));
+      })
+      .then(function () {
+        self.emit('end');
+      })
+      .catch(function (error) {
+        console.log(error);
         self.emit('end');
       });
   };
