@@ -26,7 +26,7 @@ gulp.task('default', function () {
       },
       applicationId: 'XXXXXXXXXXXX',
       params: {
-        functionOutlining: true,
+        functionOutlining: {},
       }
     }))
     .pipe(gulp.dest('dist/'));
@@ -58,4 +58,4 @@ A number value that is used to provide the JScrambler's port.
 ### params
 Type: `Object`
 
-You can find a list of all the possible parameters in [here](https://github.com/auditmark/node-jscrambler#jscrambler-options).
+You can find a list of all the possible parameters in [here](https://docs.jscrambler.com/).
