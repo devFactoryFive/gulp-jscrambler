@@ -56,6 +56,7 @@ Type: `Number`
 A number value that is used to provide the JScrambler's port.
 
 ### params
-Type: `Object`
+Type: `Object` or `Array`
 
-You can find a list of all the possible parameters in [here](https://docs.jscrambler.com/).
+You can find a list of all the possible parameters in our transformations list
+found [here](https://docs.jscrambler.com/).
