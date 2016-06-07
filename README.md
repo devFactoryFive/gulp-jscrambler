@@ -1,16 +1,27 @@
-# [gulp](https://github.com/wearefractal/gulp)-jscrambler
+# ![jscrambler](media/jscrambler-logo.png)
+[gulp](https://github.com/wearefractal/gulp)-jscrambler
+--------------------
 
-> Obfuscate your source files.
+Add obfuscation to your build process with [gulp](https://github.com/wearefractal/gulp) and gulp-jscrambler.
 
-## Install
+> DISCLAIMER: If you are looking for Jscrambler 3.8 or below please go to [this page](https://github.com/jscrambler/gulp-jscrambler/tree/v0).
+
+## How to Use
+
+### Install
 
 Install with [npm](https://npmjs.org/package/gulp-jscrambler).
 
 ```
-npm install --save-dev gulp-jscrambler
+npm install -D gulp-jscrambler
 ```
+Option `-D` will make sure it is installed as a `devDependency`.
 
-## Examples
+### Setup your Jscrambler Gulp task
+
+In order to start using gulp-jscrambler you will need to add a new task to your project `gulpfile.js`. This task will be responsible for protecting your application with Jscrambler.
+
+Here's an example of how Jscrambler task should look like:
 
 ```js
 var gulp = require('gulp');
@@ -25,38 +36,32 @@ gulp.task('default', function () {
         secretKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
       },
       applicationId: 'XXXXXXXXXXXX',
-      params: {
-        functionOutlining: {},
-      }
+      params: [
+        {
+          name: 'whitespaceRemoval'
+        },
+        {
+          name: 'charToTernaryOperator'
+        }
+      ]
     }))
     .pipe(gulp.dest('dist/'));
 });
 ```
 
-## Options
+You will need your credentials and Application ID in order to protect your application.
+Navigate to your [profile](https://app.jscrambler.com/profile) page and grab your `accessKey` and `secretKey` at the _API Credentials_ section.
 
-### keys.accessKey
-Type: `String`
+Your `applicationId` can be found inside your application page just below your application name. Click the copy to clipboard icon to copy the `applicationId`.
 
-A string value that is used to provide the JScrambler API with the access key.
+![copy](media/copy-id.png)
 
-### keys.secretKey
-Type: `String`
+You can also grab your current configuration on your application page. This will download a `.json` file containing a valid configuration with your currently selected options.
 
-A string value that is used to sign requests to the JScrambler API.
+![download config file location](media/download-settings.png)
 
-### host
-Type: `String`
+Keep in mind that the `params` object is optional and if it is not provided we will use your previous configuration.
 
-A string value that is used to provide the JScrambler's host.
+### Usage Example
 
-### port
-Type: `Number`
-
-A number value that is used to provide the JScrambler's port.
-
-### params
-Type: `Object` or `Array`
-
-You can find a list of all the possible parameters in our transformations list
-found [here](https://docs.jscrambler.com/).
+You can find some working examples [here](https://github.com/jscrambler/grunt-jscrambler/tree/master/examples)
