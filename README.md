@@ -1,4 +1,4 @@
-# ![jscrambler](media/jscrambler-logo.png)
+# ![jscrambler](https://rawgithub.com/jscrambler/gulp-jscrambler/master/media/jscrambler-logo.png)
 [gulp](https://github.com/wearefractal/gulp)-jscrambler
 --------------------
 
@@ -54,11 +54,11 @@ Navigate to your [profile](https://app.jscrambler.com/profile) page and grab you
 
 Your `applicationId` can be found inside your application page just below your application name. Click the copy to clipboard icon to copy the `applicationId`.
 
-![copy](media/copy-id.png)
+![copy](https://rawgithub.com/jscrambler/gulp-jscrambler/master/media/copy-id.png)
 
 You can also grab your current configuration on your application page. This will download a `.json` file containing a valid configuration with your currently selected options.
 
-![download config file location](media/download-settings.png)
+![download config file location](https://rawgithub.com/jscrambler/gulp-jscrambler/master/media/download-settings.png)
 
 Keep in mind that the `params` object is optional and if it is not provided we will use your previous configuration.
 

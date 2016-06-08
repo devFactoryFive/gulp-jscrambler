@@ -6,7 +6,7 @@
   "author": "José Magalhães <jose.magalhaes@auditmark.com> (https://github.com/magalhas)",
   "repository": {
     "type": "git",
-    "url": "git://github.com:auditmark/gulp-jscrambler.git"
+    "url": "https://github.com/jscrambler/gulp-jscrambler.git"
   },
   "bugs": {
     "url": "https://github.com/auditmark/gulp-jscrambler/issues"
