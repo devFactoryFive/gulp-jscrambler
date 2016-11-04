@@ -7,7 +7,7 @@
 Install with [npm](https://npmjs.org/package/gulp-jscrambler).
 
 ```
-npm install --save-dev gulp-jscrambler
+npm install --save-dev gulp-jscrambler@^0.1.5
 ```
 
 ## Examples
