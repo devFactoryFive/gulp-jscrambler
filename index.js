@@ -33,7 +33,7 @@ module.exports = function (options) {
         port: options.port,
         params: options.params
       }, function (buffer, file) {
-        var cwd = options.params && options.params.cwd || process.cwd();
+        var cwd = options && options.cwd || process.cwd();
         var relativePath = path.relative(cwd, file);
         self.emit('data', new File({
           path: relativePath,
